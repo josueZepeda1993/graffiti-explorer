@@ -9,16 +9,19 @@ class HomeScreen extends StatelessWidget {
       nombre: 'Jaguar Cósmico',
       artista: 'Artista Local',
       ubicacion: 'La Campanera',
+      images: 'assets/images/teko.png',
     ),
     Mural(
       nombre: 'Alas de Libertad',
       artista: 'Colectivo Urbano',
       ubicacion: 'La Campanera',
+      images: 'assets/images/duwest.jpg',
     ),
     Mural(
       nombre: 'Colores del Barrio',
       artista: 'Muralistas SV',
       ubicacion: 'La Campanera',
+      images: 'assets/images/muralBolivia.jpg',
     ),
   ];
 
@@ -49,10 +52,26 @@ class HomeScreen extends StatelessWidget {
                 final mural = murales[index];
 
                 return Card(
-                  child: ListTile(
-                    leading: const Icon(Icons.palette),
-                    title: Text(mural.nombre),
-                    subtitle: Text(mural.artista),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(
+                          mural.images,
+                          height: 200,
+                          width: double.infinity,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+
+                      ListTile(
+                        leading: const Icon(Icons.palette),
+                        title: Text(mural.nombre),
+                        subtitle: Text(mural.artista),
+                      ),
+                    ],
                   ),
                 );
               },
