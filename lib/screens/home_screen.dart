@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/mural.dart';
+import 'mural_detail_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
@@ -10,18 +11,21 @@ class HomeScreen extends StatelessWidget {
       artista: 'Artista Local',
       ubicacion: 'La Campanera',
       images: 'assets/images/teko.png',
+      descripcion: 'Mural representativo del arte urbano local.',
     ),
     Mural(
       nombre: 'Alas de Libertad',
       artista: 'Colectivo Urbano',
       ubicacion: 'La Campanera',
       images: 'assets/images/duwest.jpg',
+      descripcion: 'Mural representativo del arte urbano local.',
     ),
     Mural(
       nombre: 'Colores del Barrio',
       artista: 'Muralistas SV',
       ubicacion: 'La Campanera',
       images: 'assets/images/muralBolivia.jpg',
+      descripcion: 'Mural representativo del arte urbano local.',
     ),
   ];
 
@@ -52,26 +56,20 @@ class HomeScreen extends StatelessWidget {
                 final mural = murales[index];
 
                 return Card(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
+                  child: ListTile(
+                    leading: const Icon(Icons.palette),
+                    title: Text(mural.nombre),
+                    subtitle: Text(mural.artista),
 
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          mural.images,
-                          height: 200,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              MuralDetailScreen(mural: mural),
                         ),
-                      ),
-
-                      ListTile(
-                        leading: const Icon(Icons.palette),
-                        title: Text(mural.nombre),
-                        subtitle: Text(mural.artista),
-                      ),
-                    ],
+                      );
+                    },
                   ),
                 );
               },
