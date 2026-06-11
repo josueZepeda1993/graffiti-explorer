@@ -48,6 +48,8 @@ class MuralDetailScreen extends StatelessWidget {
 
                   Text('Ubicación: ${mural.ubicacion}'),
 
+                  Text('Coordenadas: ${mural.latitud}, ${mural.longitud}',),
+
                   const SizedBox(height: 16),
 
                   Text(mural.descripcion),

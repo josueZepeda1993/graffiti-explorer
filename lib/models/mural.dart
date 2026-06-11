@@ -4,6 +4,8 @@ class Mural {
   final String ubicacion;
   final String images;
   final String descripcion;
+  final double latitud;
+  final double longitud;
 
   const Mural({
     required this.nombre,
@@ -11,5 +13,7 @@ class Mural {
     required this.ubicacion,
     required this.images,
     required this.descripcion,
+    required this.latitud,
+    required this.longitud,
   });
 }

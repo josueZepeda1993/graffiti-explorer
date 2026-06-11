@@ -12,6 +12,9 @@ class HomeScreen extends StatelessWidget {
       ubicacion: 'La Campanera',
       images: 'assets/images/teko.png',
       descripcion: 'Mural representativo del arte urbano local.',
+      latitud: 13.7150,
+      longitud: -89.1400,
+
     ),
     Mural(
       nombre: 'Alas de Libertad',
@@ -19,6 +22,8 @@ class HomeScreen extends StatelessWidget {
       ubicacion: 'La Campanera',
       images: 'assets/images/duwest.jpg',
       descripcion: 'Mural representativo del arte urbano local.',
+      latitud: 13.7150,
+      longitud: -89.1400,
     ),
     Mural(
       nombre: 'Colores del Barrio',
@@ -26,6 +31,8 @@ class HomeScreen extends StatelessWidget {
       ubicacion: 'La Campanera',
       images: 'assets/images/muralBolivia.jpg',
       descripcion: 'Mural representativo del arte urbano local.',
+      latitud: 13.7150,
+      longitud: -89.1400,
     ),
   ];
 
