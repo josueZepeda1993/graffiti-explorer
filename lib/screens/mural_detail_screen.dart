@@ -21,7 +21,7 @@ class MuralDetailScreen extends StatelessWidget {
           children: [
 
             Image.asset(
-              mural.images,
+              mural.imagen,
               width: double.infinity,
               fit: BoxFit.cover,
             ),

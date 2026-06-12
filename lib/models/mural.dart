@@ -2,7 +2,7 @@ class Mural {
   final String nombre;
   final String artista;
   final String ubicacion;
-  final String images;
+  final String imagen;
   final String descripcion;
   final double latitud;
   final double longitud;
@@ -11,7 +11,7 @@ class Mural {
     required this.nombre,
     required this.artista,
     required this.ubicacion,
-    required this.images,
+    required this.imagen,
     required this.descripcion,
     required this.latitud,
     required this.longitud,

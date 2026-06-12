@@ -1,41 +1,11 @@
 import 'package:flutter/material.dart';
-import '../models/mural.dart';
+//import '../models/mural.dart';
 import 'mural_detail_screen.dart';
+import '../data/murals_data.dart';
 
 class HomeScreen extends StatelessWidget {
-  HomeScreen({super.key});
-
-  final List<Mural> murales = [
-    Mural(
-      nombre: 'Jaguar Cósmico',
-      artista: 'Artista Local',
-      ubicacion: 'La Campanera',
-      images: 'assets/images/teko.png',
-      descripcion: 'Mural representativo del arte urbano local.',
-      latitud: 13.7150,
-      longitud: -89.1400,
-
-    ),
-    Mural(
-      nombre: 'Alas de Libertad',
-      artista: 'Colectivo Urbano',
-      ubicacion: 'La Campanera',
-      images: 'assets/images/duwest.jpg',
-      descripcion: 'Mural representativo del arte urbano local.',
-      latitud: 13.7150,
-      longitud: -89.1400,
-    ),
-    Mural(
-      nombre: 'Colores del Barrio',
-      artista: 'Muralistas SV',
-      ubicacion: 'La Campanera',
-      images: 'assets/images/muralBolivia.jpg',
-      descripcion: 'Mural representativo del arte urbano local.',
-      latitud: 13.7150,
-      longitud: -89.1400,
-    ),
-  ];
-
+  const HomeScreen({super.key});
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
