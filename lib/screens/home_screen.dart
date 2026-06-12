@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 //import '../models/mural.dart';
 import 'mural_detail_screen.dart';
 import '../data/murals_data.dart';
+import 'map_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -25,6 +26,21 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
+
+          ElevatedButton.icon(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const MapScreen(),
+                ),
+              );
+            },
+            icon: const Icon(Icons.map),
+            label: const Text('Ver Mapa'),
+          ),
+
+          const SizedBox(height: 20),  
 
           Expanded(
             child: ListView.builder(
