@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 import 'mural_detail_screen.dart';
 import '../data/murals_data.dart';
 import 'map_screen.dart';
+import '../services/favorites_service.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-  
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+
+}
+class _HomeScreenState extends State<HomeScreen>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +59,22 @@ class HomeScreen extends StatelessWidget {
                     leading: const Icon(Icons.palette),
                     title: Text(mural.nombre),
                     subtitle: Text(mural.artista),
+
+                    trailing: IconButton(
+                      icon: Icon(
+                        FavoritesService.esFavorito(mural.nombre)
+                          ? Icons.favorite
+                          : Icons.favorite_border,
+                        color: FavoritesService.esFavorito(mural.nombre)
+                          ? Colors.red
+                          : Colors.grey,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          FavoritesService.toggleFavorito(mural.nombre);
+                        });
+                      },
+                    ),
 
                     onTap: () {
                       Navigator.push(
